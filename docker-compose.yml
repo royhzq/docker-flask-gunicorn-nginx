@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  flaskapp:
+    build: .
+    volumes:
+      - .:/app
+    restart: always
+
+  nginx:
+    image: nginx:1.13
+    ports:
+      - 5001:80
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - ./static:/static
+    restart: always
+    depends_on:
+      - flaskapp
