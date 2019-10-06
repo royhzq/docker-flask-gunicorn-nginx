@@ -6,6 +6,6 @@ Run in this path:
 ```sh
 $ docker-compose up
 ```
-The Flask app will be running on http://localhost:5001
-Static files will be served by Nginx on http://localhost:5001/static/
+This will build the docker image and the production-ready Flask app will be running on http://my-public-ip:5001 (or http://localhost:5001 for local machine). 
+Static files will be served by Nginx on http://my-public-ip/static/. 
 
